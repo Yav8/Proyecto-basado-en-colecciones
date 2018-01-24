@@ -37,6 +37,6 @@ public class Producto {
     }
     
     public String todasLasCaracteristicasDelProducto() {
-        return "Nombre del producto: " + nombre + " - precio: " + precio + " - nÃºmero de unidades: " + numeroDeUnidades + " - nÃºmero identificativo del producto: " + numeroIdentificativo;
+        return "Nombre del producto: " + nombre + " - precio: " + precio + " - número de unidades: " + numeroDeUnidades + " - número identificativo del producto: " + numeroIdentificativo;
     }
 }
