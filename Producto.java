@@ -4,10 +4,10 @@ public class Producto {
     private double precio;
     private int numeroDeUnidades;
     
-    public Producto() {
-        nombre = "";
-        precio = 0;
-        numeroDeUnidades = 0;
+    public Producto(String nombre, double precio, int numeroDeUnidades) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.numeroDeUnidades = numeroDeUnidades;
     }
     
     public String obtenerNombre() {
@@ -32,5 +32,9 @@ public class Producto {
     
     public void fijarNumeroDeUnidades(int numeroDeUnidades) {
         this.numeroDeUnidades = numeroDeUnidades;
+    }
+    
+    public String todasLasCaracteristicasDelProducto() {
+        return "Nombre del producto: " + nombre + " - precio: " + precio + " - número de unidades: " + numeroDeUnidades;
     }
 }
