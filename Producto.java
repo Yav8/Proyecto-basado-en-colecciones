@@ -3,11 +3,13 @@ public class Producto {
     private String nombre;
     private double precio;
     private int numeroDeUnidades;
+    private int numeroIdentificativo;
     
-    public Producto(String nombre, double precio, int numeroDeUnidades) {
+    public Producto(String nombre, double precio, int numeroDeUnidades, int numeroIdentificativo) {
         this.nombre = nombre;
         this.precio = precio;
         this.numeroDeUnidades = numeroDeUnidades;
+        this.numeroIdentificativo = numeroIdentificativo;
     }
     
     public String obtenerNombre() {
@@ -35,6 +37,6 @@ public class Producto {
     }
     
     public String todasLasCaracteristicasDelProducto() {
-        return "Nombre del producto: " + nombre + " - precio: " + precio + " - número de unidades: " + numeroDeUnidades;
+        return "Nombre del producto: " + nombre + " - precio: " + precio + " - número de unidades: " + numeroDeUnidades + " - número identificativo del producto: " + numeroIdentificativo;
     }
 }
