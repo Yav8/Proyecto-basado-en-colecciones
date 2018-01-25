@@ -115,7 +115,7 @@ public class Tienda {
      * Ordena de menor a mayor el número de unidades de los productos 
      * de la tienda y los muestra por pantalla.
      */
-    public void mostrarListaDeProductosConMenorNumeroDeUnidades() {
+    public void mostrarListaDeProductosDeMenorAMayorNumeroDeUnidades() {
         ArrayList<Producto> listaDeProductosOrdenadosDeMenorAMayorPorNumeroDeUnidades = new ArrayList<Producto>(); 
         ArrayList<Producto> copiaDeListaDeProductos = new ArrayList<Producto>();
         
