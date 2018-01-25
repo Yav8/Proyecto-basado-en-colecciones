@@ -36,7 +36,7 @@ public class Tienda {
      * Localiza y devuelve aquellos productos con el mayor precio y
      * los elimina de la colección introducida por el usuario.
      */
-    public ArrayList<Producto> localizaElProductoOrdenadoDeMayorAMenorPorPrecio(ArrayList<Producto> coleccion) {
+    public ArrayList<Producto> localizaLosProductosConMayorPrecio(ArrayList<Producto> coleccion) {
         ArrayList<Producto> productosConMayorPrecio = new ArrayList<Producto>();
         double precioMaximo = 0;
         int contador = 0;
@@ -72,7 +72,7 @@ public class Tienda {
         if(listaDeProductos.size() > 0) {
             copiaDeListaDeProductos.addAll(listaDeProductos);
             while(copiaDeListaDeProductos.size() != 0) {
-                listaDeProductosOrdenadosDeMayorAMenorPorPrecio.addAll(localizaElProductoOrdenadoDeMayorAMenorPorPrecio(copiaDeListaDeProductos));
+                listaDeProductosOrdenadosDeMayorAMenorPorPrecio.addAll(localizaLosProductosConMayorPrecio(copiaDeListaDeProductos));
             }
             
             for(Producto producto : listaDeProductosOrdenadosDeMayorAMenorPorPrecio) {
@@ -85,7 +85,7 @@ public class Tienda {
      * Localiza y devuelve los productos con menor número de unidades y
      * los elimina de la colección introducida por el usuario.
      */
-    public ArrayList<Producto> localizaElProductoOrdenadoDeMenorAMayorPorNumeroDeUnidades(ArrayList<Producto> coleccion) {
+    public ArrayList<Producto> localizaLosProductosConMenorNumeroDeUnidades(ArrayList<Producto> coleccion) {
         ArrayList<Producto> productosConMenorNumeroDeUnidades = new ArrayList<Producto>();
         int numeroDeUnidadesMinimo = 0;
         int contador = 0;
@@ -122,7 +122,7 @@ public class Tienda {
         if(listaDeProductos.size() > 0) {
             copiaDeListaDeProductos.addAll(listaDeProductos);
             while(copiaDeListaDeProductos.size() != 0) {
-                listaDeProductosOrdenadosDeMenorAMayorPorNumeroDeUnidades.addAll(localizaElProductoOrdenadoDeMenorAMayorPorNumeroDeUnidades(copiaDeListaDeProductos));
+                listaDeProductosOrdenadosDeMenorAMayorPorNumeroDeUnidades.addAll(localizaLosProductosConMenorNumeroDeUnidades(copiaDeListaDeProductos));
             }
             
             for(Producto producto : listaDeProductosOrdenadosDeMenorAMayorPorNumeroDeUnidades) {
