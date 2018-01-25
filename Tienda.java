@@ -4,11 +4,17 @@ public class Tienda {
     private ArrayList<Producto> listaDeProductos;
     private int numeroIdentificativo;
     
+    /**
+     * Constructor de la clase Tienda.
+     */
     public Tienda() {
         listaDeProductos = new ArrayList<Producto>();
         numeroIdentificativo = 1;
     }
     
+    /**
+     * Añade productos a la colección con valores reales.
+     */
     public void addProductos(String nombre, double precio, int numeroDeUnidades) {
         if(precio >= 0 && numeroDeUnidades >= 0) {
             listaDeProductos.add(new Producto(nombre, precio, numeroDeUnidades, numeroIdentificativo));
@@ -16,12 +22,19 @@ public class Tienda {
         }
     }
     
+    /**
+     * Muestra las características de todos los productos de la tienda.
+     */
     public void mostrarCaracteristicasDeLosProductos() {
         for(Producto producto : listaDeProductos) {
             System.out.println(producto.todasLasCaracteristicasDelProducto());
         }
     }
     
+    /**
+     * Localiza y devuelve aquellos productos con el mayor precio y
+     * los elimina de la colección introducida por el usuario.
+     */
     public ArrayList<Producto> localizaElProductoOrdenadoDeMayorAMenorPorPrecio(ArrayList<Producto> coleccion) {
         ArrayList<Producto> productosConMayorPrecio = new ArrayList<Producto>();
         double precioMaximo = 0;
@@ -47,6 +60,10 @@ public class Tienda {
         return productosConMayorPrecio;
     }
 
+    /**
+     * Ordena de mayor a menor precio los productos de la tienda
+     * y los muestra por pantalla.
+     */
     public void mostrarlistaDeProductosOrdenadosDeMayorAMenorPorPrecio() {
         ArrayList<Producto> listaDeProductosOrdenadosDeMayorAMenorPorPrecio = new ArrayList<Producto>(); 
         ArrayList<Producto> copiaDeListaDeProductos = new ArrayList<Producto>();
@@ -63,6 +80,10 @@ public class Tienda {
         }
     }
     
+    /**
+     * Localiza y devuelve los productos con menor número de unidades y
+     * los elimina de la colección introducida por el usuario.
+     */
     public ArrayList<Producto> localizaElProductoOrdenadoDeMenorAMayorPorNumeroDeUnidades(ArrayList<Producto> coleccion) {
         ArrayList<Producto> productosConMenorNumeroDeUnidades = new ArrayList<Producto>();
         int numeroDeUnidadesMinimo = 0;
@@ -89,6 +110,10 @@ public class Tienda {
         return productosConMenorNumeroDeUnidades;
     }
     
+    /**
+     * Ordena de menor a mayor el número de unidades de los productos 
+     * de la tienda y los muestra por pantalla.
+     */
     public void mostrarListaDeProductosConMenorNumeroDeUnidades() {
         ArrayList<Producto> listaDeProductosOrdenadosDeMenorAMayorPorNumeroDeUnidades = new ArrayList<Producto>(); 
         ArrayList<Producto> copiaDeListaDeProductos = new ArrayList<Producto>();
