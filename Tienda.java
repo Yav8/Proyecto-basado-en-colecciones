@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Tienda {
     private ArrayList<Producto> listaDeProductos;
@@ -134,9 +135,23 @@ public class Tienda {
      * Modifica el nombre, precio y número de unidades 
      * a través del número identificativo indicado por el usuario.
      */
-    public void modificarCaracterísticasDeUnProducto(int numeroIdentificativo, String nombre, double precio, int numeroDeUnidades) {
+    public void modificarCaracteristicasDeUnProducto(int numeroIdentificativo, String nombre, double precio, int numeroDeUnidades) {
         listaDeProductos.get(numeroIdentificativo - 1).fijarNombre(nombre);
         listaDeProductos.get(numeroIdentificativo - 1).fijarPrecio(precio);
         listaDeProductos.get(numeroIdentificativo - 1).fijarNumeroDeUnidades(numeroDeUnidades);
+    }
+    
+    /**
+     * Elimina los objetos que tengan menor número de unidades 
+     * que el número introducido por el usuario usando un iterador.
+     */
+    public void eliminarProductosConMenorNumeroDeUnidadesUtilizandoUnIterador(int numeroDeUnidadesMinimas) {
+        Iterator<Producto> it = listaDeProductos.iterator();
+        
+        while(it.hasNext()) {
+            if(it.next().obtenerNumeroDeUnidades() < numeroDeUnidadesMinimas) {
+                it.remove();
+            }
+        }
     }
 }
