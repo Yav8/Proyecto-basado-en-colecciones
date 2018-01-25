@@ -129,4 +129,14 @@ public class Tienda {
             }
         }
     }
+    
+    /**
+     * Modifica el nombre, precio y número de unidades 
+     * a través del número identificativo indicado por el usuario.
+     */
+    public void modificarCaracterísticasDeUnProducto(int numeroIdentificativo, String nombre, double precio, int numeroDeUnidades) {
+        listaDeProductos.get(numeroIdentificativo - 1).fijarNombre(nombre);
+        listaDeProductos.get(numeroIdentificativo - 1).fijarPrecio(precio);
+        listaDeProductos.get(numeroIdentificativo - 1).fijarNumeroDeUnidades(numeroDeUnidades);
+    }
 }
