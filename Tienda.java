@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Tienda {
     private ArrayList<Producto> listaDeProductos;
@@ -8,9 +11,21 @@ public class Tienda {
     /**
      * Constructor de la clase Tienda.
      */
-    public Tienda() {
+    public Tienda(String textoArchivo) {
         listaDeProductos = new ArrayList<Producto>();
         numeroIdentificativo = 1;
+        try {
+            File archivo = new File(textoArchivo);
+            Scanner sc = new Scanner(archivo);
+            while(sc.hasNextLine()) {
+                String[] arrayDePalabras = sc.nextLine().split(" # ");
+                addProductos(arrayDePalabras[0], Double.parseDouble(arrayDePalabras[1]), Integer.parseInt(arrayDePalabras[2]));
+            }
+            sc.close();
+        }
+        catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     
     /**

@@ -1,0 +1,5 @@
+Caja de bombones # 10 # 5
+Colonia # 8 # 10
+Carton de leche # 1 # 20
+Jabon de manos # 3.50 # 25
+Barra de pan # 0.70 # 3
