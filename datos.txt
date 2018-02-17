@@ -1,5 +1,10 @@
 Caja de bombones # 10 # 5
 Colonia # 8 # 10
-Carton de leche # 1 # 20
-Jabon de manos # 3.50 # 25
-Barra de pan # 0.70 # 3
+Carton de leche # 1 # 5
+Jabon de manos # 3.50 # 5
+Barra de pan # 0.70 # 5
+Zapatos # 25 # 6
+Raqueta # 12 # 6
+Guantes # 10 # 10
+Compas # 12 # 6
+Raton # 10 # 10
