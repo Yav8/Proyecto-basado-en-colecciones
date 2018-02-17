@@ -43,7 +43,7 @@ public class TiendaTest
     @Test
     public void Test()
     {
-        Tienda tienda1 = new Tienda();        
+        Tienda tienda1 = new Tienda("");        
         tienda1.addProductos("Caja de bombones", 10, 5);
         tienda1.addProductos("Colonia", 8, 10);
         tienda1.addProductos("Cartón de leche", 1, 20);

@@ -9,7 +9,9 @@ public class Tienda {
     private int numeroIdentificativo;
     
     /**
-     * Constructor de la clase Tienda.
+     * Constructor de la clase Tienda. Si el usuario lo desea,
+     * puede obtener directamente una lista de productos si introduce
+     * en el parámetro "datos.txt".
      */
     public Tienda(String textoArchivo) {
         listaDeProductos = new ArrayList<Producto>();
