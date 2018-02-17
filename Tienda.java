@@ -174,9 +174,31 @@ public class Tienda {
     }
 
     /**
-     * Muestra los productos divididos por su número de unidades.
+     * Muestra los productos divididos por su número de unidades y
+     * ordenados alfabéticamente por su nombre.
      */
-    public void mostrarProductosDivididosPorNumeroDeUnidades() {
+    public void mostrarProductosDivididosPorNumeroDeUnidadesYOrdenadosAlfabeticamente() {     
+        ArrayList<Producto> listaDeProductosOrdenadosAlfabeticamente = new ArrayList<Producto>(listaDeProductos);
+
+        for(Producto producto1 : listaDeProductosOrdenadosAlfabeticamente) {
+            for(Producto producto2 : listaDeProductosOrdenadosAlfabeticamente) {
+                if(producto1.obtenerNombre().compareToIgnoreCase(producto2.obtenerNombre()) < 0) {
+                    Producto temporal1 = producto1;
+                    listaDeProductosOrdenadosAlfabeticamente.set(listaDeProductosOrdenadosAlfabeticamente.indexOf(producto1), producto2);
+                    listaDeProductosOrdenadosAlfabeticamente.set(listaDeProductosOrdenadosAlfabeticamente.indexOf(producto2), temporal1);  
+                    for(Producto producto3 : listaDeProductosOrdenadosAlfabeticamente) {
+                        for(Producto producto4 : listaDeProductosOrdenadosAlfabeticamente) {
+                            if(producto3.obtenerNombre().compareToIgnoreCase(producto4.obtenerNombre()) < 0) {
+                                Producto temporal2 = producto3;
+                                listaDeProductosOrdenadosAlfabeticamente.set(listaDeProductosOrdenadosAlfabeticamente.indexOf(producto3), producto4);
+                                listaDeProductosOrdenadosAlfabeticamente.set(listaDeProductosOrdenadosAlfabeticamente.indexOf(producto4), temporal2);  
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+
         HashSet<Integer> conjuntoDeNumerosDeUnidades = new HashSet<Integer>();
 
         for(Producto producto : listaDeProductos) {
@@ -185,7 +207,7 @@ public class Tienda {
 
         for(int numeroDeUnidades : conjuntoDeNumerosDeUnidades) {
             System.out.println(numeroDeUnidades + ":");            
-            for(Producto producto : listaDeProductos) {
+            for(Producto producto : listaDeProductosOrdenadosAlfabeticamente) {
                 if(producto.obtenerNumeroDeUnidades() == numeroDeUnidades) {
                     System.out.println(producto.todasLasCaracteristicasDelProducto());
                 }
